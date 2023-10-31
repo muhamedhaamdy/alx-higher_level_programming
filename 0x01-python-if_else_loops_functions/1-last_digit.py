@@ -2,12 +2,12 @@
 import random
 number = random.randint(-10000, 10000)
 if number < 0:
-    lastdigit = -1 * (10 - number % 10);
+    lastdigit = -1 * (10 - number % 10)
     if lastdigit == -10:
         lastdigit = 0
 else:
-    lastdigit = number % 10;
-print(f"Last digit of {number} is {lastdigit}", end = " ")
+    lastdigit = number % 10
+print(f"Last digit of {number} is {lastdigit}", end=" ")
 if lastdigit > 5:
     print("and is greater than 5")
 elif lastdigit == 0:
