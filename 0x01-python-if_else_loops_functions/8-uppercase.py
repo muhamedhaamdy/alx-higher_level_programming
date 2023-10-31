@@ -4,4 +4,4 @@ def uppercase(str):
         if i == len(str):
             print(str[i])
         else:
-         print("{}".format(str[i] - 32), end="")
+            print("{}".format(str[i] - 32), end="")
