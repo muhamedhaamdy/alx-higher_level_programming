@@ -2,6 +2,8 @@
 def weight_average(my_list=[]):
     summation = 0
     dev = 0
+    if not my_list:
+        return 0
     for i in my_list:
         summation += i[0] * i[1]
         dev += i[1]
