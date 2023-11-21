@@ -3,6 +3,6 @@
 
 
 class Square:
-    def __init__(self, _Square__size):
+    def __init__(self, size):
         """ initial function """
-        self._Square__size = _Square__size
+        self.__size = size
