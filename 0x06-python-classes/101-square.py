@@ -32,7 +32,7 @@ class Square:
     @position.setter
     def position(self, value):
         """setter"""
-        if ((isinstance(value, tuple) and len(value) is 2) and
+        if ((isinstance(value, tuple) and len(value) == 2) and
             (isinstance(value[0], int) and value[0] >= 0) and
                 (isinstance(value[1], int) and value[1] >= 0)):
             self.__position = Value
@@ -43,7 +43,7 @@ class Square:
         """ calulate the area """
         return self.__size * self.__size
 
-    def my_print(self):
+    def __str__(self):
         """ print the square """
         if not self.__size:
             print()
