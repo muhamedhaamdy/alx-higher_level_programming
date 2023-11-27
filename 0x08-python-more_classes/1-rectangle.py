@@ -8,11 +8,12 @@ class Rectangle:
         """inittial function"""
         self.__width = width
         self.__height = height
-        
+
     @property
     def width(self):
         """The width property."""
         return self.__width
+
     @width.setter
     def width(self, value):
         """width setter"""
@@ -23,11 +24,12 @@ class Rectangle:
                 raise ValueError("width must be >= 0")
         else:
             raise TypeError("width must be an integer")
-    
+
     @property
     def height(self):
         """The height property."""
         return self.__height
+
     @height.setter
     def height(self, value):
         """height setter"""
@@ -38,7 +40,3 @@ class Rectangle:
                 raise ValueError("height must be >= 0")
         else:
             raise TypeError("height must be an integer")
-            
-
-
-
