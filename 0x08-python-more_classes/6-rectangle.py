@@ -4,8 +4,10 @@
 
 class Rectangle:
     """Rectangle class"""
+    number_of_instances = 0
     def __init__(self, width=0, height=0):
         """inittial function"""
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -55,7 +57,12 @@ class Rectangle:
 
     def __repr__(self):
         """represernt a string"""
-        return "Rectangle({}, {})".format(self.__width, self.__height) 
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """delete the isinstance"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     def area(self):
         """calculate the area"""

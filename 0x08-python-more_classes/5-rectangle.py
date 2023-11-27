@@ -55,7 +55,11 @@ class Rectangle:
 
     def __repr__(self):
         """represernt a string"""
-        return "Rectangle({}, {})".format(self.__width, self.__height) 
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """delete the isinstance"""
+        print("Bye rectangle...")
 
     def area(self):
         """calculate the area"""

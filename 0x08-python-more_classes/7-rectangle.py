@@ -4,8 +4,11 @@
 
 class Rectangle:
     """Rectangle class"""
+    number_of_instances = 0
+    print_symbol = "#"
     def __init__(self, width=0, height=0):
         """inittial function"""
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -43,19 +46,21 @@ class Rectangle:
 
     def __str__(self):
         """represernt a string"""
-        s = ""
         if not self.__height or not self.__width:
             return ""
-        for i in range(0, self.__height):
-            for j in range(0, self.__width):
-                s += ("#")
-            if i != self.__height - 1:
-                s += ("\n")
+        s = str(self.print_symbol) * self.__width + "\n"
+        s *= self.__height - 1
+        s += str(self.print_symbol) * self.__width
         return s
 
     def __repr__(self):
         """represernt a string"""
-        return "Rectangle({}, {})".format(self.__width, self.__height) 
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """delete the isinstance"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     def area(self):
         """calculate the area"""
