@@ -1,4 +1,4 @@
-#!/usr/bin/pythone3
+#!/usr/bin/python3
 class Rectangle:
     """Rectangle class"""
     pass
