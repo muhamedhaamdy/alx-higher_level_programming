@@ -40,7 +40,7 @@ class Rectangle:
                 raise ValueError("height must be >= 0")
         else:
             raise TypeError("height must be an integer")
- 
+
     def __str__(self):
         s = ""
         if not self.__height or not self.__width:
@@ -51,7 +51,7 @@ class Rectangle:
             if i != self.__height - 1:
                 s += ("\n")
         return s
-    
+
     def area(self):
         """calculate the area"""
         return self.__width * self.__height
