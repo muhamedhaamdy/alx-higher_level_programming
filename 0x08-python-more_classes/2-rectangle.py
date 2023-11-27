@@ -43,7 +43,7 @@ class Rectangle:
 
     def area(self):
         """calculate the area"""
-        return self.__width * sefl.__height
+        return self.__width * self.__height
 
     def perimeter(self):
         """calculate the perimeter"""
