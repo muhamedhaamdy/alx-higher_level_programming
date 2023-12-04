@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """the begining of the file"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
