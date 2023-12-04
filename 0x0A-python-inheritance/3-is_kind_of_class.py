@@ -2,7 +2,7 @@
 """begining of the file"""
 
 
-def (obj, a_class):
+def is_kind_of_class(obj, a_class):
     """is same class"""
     
     return issubclass(obj, a_class)
