@@ -8,7 +8,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         if isinstance(width, int):
             if width > 0:
-                self.__widht = width
+                self.__width = width
             else:
                 raise ValueError("width must be > 0")
         else:
@@ -32,11 +32,15 @@ class Rectangle(Base):
         
         if isinstance(y, int):
             if y >= 0:
-                self.__x = y
+                self.__y = y
             else:
                 raise ValueError("y must be >= 0")
         else:
             raise TyepError("y must be an integer")
+
+        super().__init__(id)
+
+
 
 
     def area(self):
@@ -47,6 +51,9 @@ class Rectangle(Base):
         """display the rectangel with the character #"""
         for i in range(0, self.__height):
             print('#' * self.__widht)
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     @property
     def width(self):
