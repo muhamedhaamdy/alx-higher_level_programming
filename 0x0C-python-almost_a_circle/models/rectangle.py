@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """The rectangle file"""
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -10,4 +10,4 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-        self.id = super().id
+        self.__id = super().__init__(id)
