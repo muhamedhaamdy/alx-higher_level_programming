@@ -49,8 +49,10 @@ class Rectangle(Base):
 
     def display(self):
         """display the rectangel with the character #"""
+        for i in range (0, self.__y):
+            print()
         for i in range(0, self.__height):
-            print('#' * self.__widht)
+            print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
