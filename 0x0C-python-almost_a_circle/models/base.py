@@ -33,3 +33,9 @@ class Base:
         file_name = "{}.json".format(cls.__name__)
         with open(file_name, 'w') as f:
             f.write(cls.to_json_string(json_string))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if not json_string or not len(json_string):
+            return []
+        return json.loads(json_string)
