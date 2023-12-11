@@ -14,7 +14,7 @@ class Rectangle(Base):
 
     def area(self):
         """return the arrea of the rectangle"""
-        return self.__widht * self.__height
+        return self.__width * self.__height
 
     def display(self):
         """display the rectangel with the character #"""
@@ -51,6 +51,11 @@ class Rectangle(Base):
                 self.y = kwargs['y']
             if 'id' in kwargs:
                 self.id = kwargs['id']
+
+    def to_dictionary(self):
+        """return the dectionary form for class"""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+
     @property
     def width(self):
         """The width property."""
