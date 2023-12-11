@@ -2,6 +2,7 @@
 """The base file"""
 import json
 
+
 class Base:
     """The base class"""
     __nb_objects = 0
@@ -15,4 +16,5 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """ that returns the JSON string representation of list_dictionaries"""
         return json.dumps(list_dictionaries)
