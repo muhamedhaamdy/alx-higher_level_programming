@@ -18,15 +18,16 @@ class Rectangle(Base):
 
     def display(self):
         """display the rectangel with the character #"""
-        for i in range (0, self.__y):
+        for i in range(0, self.__y):
             print()
         for i in range(0, self.__height):
             print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
         """returns the string representation of an object."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
-    
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
     def update(self, *args, **kwargs):
         """update the rectangle"""
         if args:
@@ -54,24 +55,27 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """return the dectionary form for class"""
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
 
     @property
     def width(self):
         """The width property."""
         return self.__width
+
     @width.setter
     def width(self, value):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-             raise ValueError("width  must be > 0")
+            raise ValueError("width  must be > 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """The height property."""
         return self.__height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -79,11 +83,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height  must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """The x property."""
         return self.__x
+
     @x.setter
     def x(self, value):
         if type(value) is not int:
@@ -96,6 +101,7 @@ class Rectangle(Base):
     def y(self):
         """The y property."""
         return self.__y
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
