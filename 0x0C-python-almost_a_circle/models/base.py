@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """The base file"""
 import json
+import os
 
 
 class Base:
@@ -50,16 +51,16 @@ class Base:
             dummy = cls(1)
             dummy.update(**dictionary)
         return dummy
-
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
         file = "{}.json".format(cls.__name__)
         obj_list = []
-        with open(file, 'r') as f:
-            f_read = f.read()
-            obj_dict = cls.from_json_string(f_read)
+        if os.path.exists(file):
+            with open(file, 'r') as f:
+                f_read = f.read()
+                obj_dict = cls.from_json_string(f_read)
 
-        for dir in obj_dict:
-            obj_list.append(cls.create(**dir))
-        return obj_list
+                for dir in obj_dict:
+                    obj_list.append(cls.create(**dir))
+            return obj_list
