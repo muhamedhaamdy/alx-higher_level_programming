@@ -1,5 +1,5 @@
 --first table
-CREATE TABLE hbtn_0c_0 {
+CREATE TABLE 'first_table'{
 	id INT AUTO_INCREMENT;
 	name varchar(256);
 }
