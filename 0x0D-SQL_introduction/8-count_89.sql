@@ -1,4 +1,4 @@
 -- display records
-select count(*) as record 
+select count(*)  
 from first_table
 where id = 89;
