@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 '''script that lists all State object'''
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -12,6 +11,5 @@ if __name__ == '__main__':
     engine = create_engine(engine_path)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id)
-    for state in states:
-        print('{}: {}'.format(state.id, state.name))
+    states = session.query(State).one()
+    print('{}: {}'.format(states.id, states.name))
