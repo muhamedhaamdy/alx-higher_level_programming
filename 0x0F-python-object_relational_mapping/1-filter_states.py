@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all states from the database with IDs in ascending order"""
+"""lists all states from the database that starts with letter N in ascending order"""
 import MySQLdb
 import sys
 
