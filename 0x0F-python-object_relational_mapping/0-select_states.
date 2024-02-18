@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import MySQLdb
+import sys
+
+db = MySQLdb.connect(user = sys.args[1], password = sys.args[2], database = sys.args[3])
+cur = db.cursor()
+cur.execute("SELECT * FROM states ORDER BY states.id")
+print(cur.fetchall())
