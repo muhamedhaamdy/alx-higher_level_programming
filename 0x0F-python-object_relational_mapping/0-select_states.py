@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""lists all states from the database with IDs in ascending order"""
 import MySQLdb
 import sys
 db = MySQLdb.connect(user=sys.argv[1], password=sys.argv[2],
