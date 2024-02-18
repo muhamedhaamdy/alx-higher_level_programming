@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
 """lists all states from the database """
 """that starts with letter N in ascending order"""
-
+import MySQLdb
+import sys
 
 if __name__ == '__main__':
     db = MySQLdb.connect(user=sys.argv[1], password=sys.argv[2],
