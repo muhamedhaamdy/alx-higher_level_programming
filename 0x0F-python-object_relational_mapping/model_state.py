@@ -9,4 +9,4 @@ class State(Base):
     """state model"""
     __tablename__ = 'state'
     id = Column(Integer, Sequence('state_id_seq'), primary_key=True)
-    name = Column(String(128), nullable=False)
+    name = Column('name',String(128), nullable=False)
