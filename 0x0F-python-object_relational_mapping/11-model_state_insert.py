@@ -11,6 +11,12 @@ if __name__ == '__main__':
     engine = create_engine(engine_path)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id)
-    for state in states:
-        print('{}: {}'.format(state.id, state.name))
+    new_state = State(name = 'Louisiana')
+    session.add(new_state)
+    session.commit()
+    state = session.query(State).filter(State.name.like('Louisiana'))\
+                                .order_by(State.id).all()
+    if state:
+        print(state[0].id)
+    else:
+        print('Not found')
