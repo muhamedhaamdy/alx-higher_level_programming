@@ -12,7 +12,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).filter(State.name.like(sys.argv[4]))\
-                    .order_by(State.id).all()
+                                .order_by(State.id).all()
     if state:
         print(state[0].id)
     else:
