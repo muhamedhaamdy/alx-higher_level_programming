@@ -11,5 +11,5 @@ if __name__ == '__main__':
     engine = create_engine(engine_path)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).one()
-    print('{}: {}'.format(states.id, states.name))
+    states = session.query(State).order_by(State.id)
+    print('{}: {}'.format(states[0].id, states[0].name))
