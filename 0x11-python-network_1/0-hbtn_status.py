@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import urllib.request
+'''script that fetches from website'''
 
 req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
 with urllib.request.urlopen(req) as response:
