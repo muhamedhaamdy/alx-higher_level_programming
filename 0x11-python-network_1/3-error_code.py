@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-'''sends a request to the URL and displays the body'''
+"""script that takes in a URL, sends a request to the
+URL and displays the body of the response (decoded in utf-8). """
 import urllib.request
 import sys
 
-
-if __name__ == '__main__':
-    url = sys.argv[1]
+if __name__ == "__main__":
     try:
-        with urllib.request.urlopen(url) as res:
-            page = res.read()
-            page = page.decode('utf-8')
-            print(page)
+        with urllib.request.urlopen(sys.argv[1]) as response:
+            html = response.read()
+        print(html.decode('utf-8'))
     except urllib.error.HTTPError as err:
-        print('Error code: {}'.format(err.code))
+        print("Error code: {}".format(err.code))
