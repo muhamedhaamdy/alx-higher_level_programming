@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''sends a request to the URL and displays the body'''
 import urllib.request
-import urllib.error
 import sys
 
 
