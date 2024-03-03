@@ -3,7 +3,6 @@
 with the letter as a parameter'''
 import requests
 import sys
-
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         q = ''
@@ -16,6 +15,6 @@ if __name__ == '__main__':
         if not res:
             print('No result')
         else:
-            print('[{}] {}'.format(res.get('id'), res.get('name'))
+            print('[{}] {}'.format(res['id'], res['name']))
     except ValueError:
         print('Not a valid JSON')
