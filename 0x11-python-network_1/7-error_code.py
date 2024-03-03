@@ -4,7 +4,6 @@ and displays the body of the response"""
 import sys
 import requests
 
-
 r = requests.get(sys.argv[1])
 code = r.status_code
 if code >= 400:
