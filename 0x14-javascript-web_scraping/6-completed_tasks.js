@@ -9,12 +9,13 @@ request.get(url, (error, response, body) => {
     return;
   }
   const data = JSON.parse(body);
-  let dict = {};
-  for (obj of data) {
+  const dict = {};
+  for (const obj of data) {
     if (!dict[obj.userId]) {
-        dict[obj.userId] = 0;
-    } if (obj.completed)
-    dict[obj.userId]++;
+      dict[obj.userId] = 0;
+    } if (obj.completed) {
+      dict[obj.userId]++;
     }
+  }
   console.log(dict);
 });
