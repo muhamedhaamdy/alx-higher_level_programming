@@ -17,5 +17,10 @@ request.get(url, (error, response, body) => {
       dict[obj.userId]++;
     }
   }
+  for (const key in dict) {
+    if (dict[key] === 0) {
+      delete dict[key];
+    }
+  }
   console.log(dict);
 });
